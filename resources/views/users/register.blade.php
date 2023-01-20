@@ -2,16 +2,25 @@
     <x-card class="p-10 max-w-lg mx-auto mt-24">
       <header class="text-center">
         <h2 class="text-2xl font-bold uppercase mb-1">Register</h2>
-        <p class="mb-4">Create an account to post gigs</p>
+        {{-- <p class="mb-4">Create an account to post gigs</p> --}}
       </header>
   
       <form method="POST" action="/users">
         @csrf
         <div class="mb-6">
-          <label for="name" class="inline-block text-lg mb-2"> Name </label>
-          <input type="text" class="border border-gray-200 rounded p-2 w-full" name="name" value="{{old('name')}}" />
+          <label for="first_name" class="inline-block text-lg mb-2"> First Name </label>
+          <input type="text" class="border border-gray-200 rounded p-2 w-full" name="first_name" value="{{old('first_name')}}" />
   
-          @error('name')
+          @error('first_name')
+          <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+          @enderror
+        </div>
+
+        <div class="mb-6">
+          <label for="last_name" class="inline-block text-lg mb-2"> Last Name </label>
+          <input type="text" class="border border-gray-200 rounded p-2 w-full" name="last_name" value="{{old('last_name')}}" />
+  
+          @error('last_name')
           <p class="text-red-500 text-xs mt-1">{{$message}}</p>
           @enderror
         </div>
@@ -21,6 +30,24 @@
           <input type="email" class="border border-gray-200 rounded p-2 w-full" name="email" value="{{old('email')}}" />
   
           @error('email')
+          <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+          @enderror
+        </div>
+
+        <div class="mb-6">
+          <label for="username" class="inline-block text-lg mb-2"> Username </label>
+          <input type="text" class="border border-gray-200 rounded p-2 w-full" name="username" value="{{old('username')}}" />
+  
+          @error('username')
+          <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+          @enderror
+        </div>
+
+        <div class="mb-6">
+          <label for="phone_no" class="inline-block text-lg mb-2"> Phone Number </label>
+          <input type="text" class="border border-gray-200 rounded p-2 w-full" name="phone_no" value="{{old('phone_no')}}" />
+  
+          @error('phone_no')
           <p class="text-red-500 text-xs mt-1">{{$message}}</p>
           @enderror
         </div>
