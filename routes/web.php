@@ -35,3 +35,9 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 
 // Log In User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+// Show Edit Profile Form
+Route::get('/users/{user}/edit', [UserController::class, 'edit'])->middleware('auth');
+
+// Update Profile
+Route::put('/users/{user}', [UserController::class, 'update'])->middleware('auth');

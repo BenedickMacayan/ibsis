@@ -40,6 +40,36 @@ class UserController extends Controller
         return view('users.profile');
     }
 
+    // Show Edit Form
+    public function edit($id) {
+        $users=User::find($id);
+        return view('users.edit',compact('users'));
+    }
+
+    // Update User Data
+    public function update(Request $request, $id) {
+        // Make sure logged in user is owner
+        if($id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
+        }
+        
+        $users=Users::find($id);
+        $users->first_name=$request->input("first_name");
+        $users->last_name=$request->input("last_name");
+        $users->phone_no=$request->input("phone_no");
+        // $formFields = $request->validate([
+        //     'first_name' => 'required',
+        //     'last_name' => ['required'],
+        //     'phone_no' => 'required',
+        //     'email' => ['required', 'email'],
+        // ]);
+
+        // $user->update($formFields);
+        $users->update();
+
+        return back()->with('message', 'User Profile updated successfully!');
+    }
+
     // Logout User
     public function logout(Request $request) {
         auth()->logout();
