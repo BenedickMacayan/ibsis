@@ -42,9 +42,9 @@
         </div>
         
         <div class="mb-6">
-          <a href="/users/{{$user->id}}/edit" class="text-blue-400 px-6 py-2 rounded-xl">
-            Edit Profile
-          </a>
+          <a href="/" class="text-blue-400 px-6 py-2 rounded-xl">
+              Edit Profile
+            </a>
         </div>
 
     </x-card>
