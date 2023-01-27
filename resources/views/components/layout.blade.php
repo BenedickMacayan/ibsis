@@ -16,7 +16,7 @@
         theme: {
           extend: {
             colors: {
-              laravel: '#ef3b2d',
+              laravel: '#7bb876',
             },
           },
         },
@@ -38,23 +38,23 @@
       @auth
       <li>
         <span class="font-bold uppercase">
-          Welcome {{auth()->user()->name}}
+          <a href="{{ url('/profile') }}" class="hover:text-laravel text-green-900">View Profile</a>
         </span>
       </li>
       <li>
         <form class="inline" method="POST" action="/logout">
           @csrf
           <button type="submit">
-            <i class="fa-solid fa-door-closed"></i> Logout
+            <i class="fa-solid fa-door-closed text-green-900"></i> <span class="hover:text-laravel text-green-900">LOG OUT</span>
           </button>
         </form>
       </li>
       @else
       <li>
-        <a href="/register" class="hover:text-laravel text-green-900"><i class="fa-solid fa-user-plus text-green-900"></i> Register</a>
+        <a href="/register" class="hover:text-laravel text-green-900"><i class="fa-solid fa-user-plus text-green-900"></i> REGISTER</a>
       </li>
       <li>
-        <a href="/login" class="hover:text-laravel text-green-900"><i class="fa-solid fa-arrow-right-to-bracket text-green-900"></i> Login</a>
+        <a href="/login" class="hover:text-laravel text-green-900"><i class="fa-solid fa-arrow-right-to-bracket text-green-900"></i> LOGIN</a>
       </li>
       @endauth
     </ul>

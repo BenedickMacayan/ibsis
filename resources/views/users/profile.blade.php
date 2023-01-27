@@ -1,7 +1,7 @@
 <x-layout>
     <x-card class="p-10 max-w-lg mx-auto mt-24 shadow-xl">
       <header class="text-center">
-        <h2 class="text-2xl font-bold uppercase mb-6 text-green-900">User Registration</h2>
+        <h2 class="text-2xl font-bold uppercase mb-6 text-green-900">PROFILE</h2>
       </header>
 
         @csrf
@@ -43,7 +43,7 @@
   
         <!-- <div class="mb-6">
           <button type="submit" class="bg-lime-600 text-white rounded py-2 px-4 hover:bg-green-600">
-            Sign Up
+            Edit Profile
           </button>
         </div> -->
 
