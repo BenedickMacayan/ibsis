@@ -25,10 +25,16 @@
   <title>IBSIS</title>
 </head>
 
-<body class="mb-48">
-  <nav class="flex justify-between items-center mb-4">
-    <a href="/"><figure class="pl-10 pt-5"><img class="w-24" src="{{asset('images/logo.png')}}" alt="" class="logo" /></figure></a>
-    <ul class="flex space-x-6 mr-6 text-lg">
+<body class="mb-48 bg-cover bg-no-repeat" style="background-image: url(images/background.png)">
+  <nav class="flex justify-between items-center mb-4 bg-white">
+      <div class="flex justfy-between text-center">
+        <a href="/"><figure class="pl-10 pt-5 pb-5"><img class="w-24" src="{{asset('images/logo.png')}}" alt="" class="logo" /></figure></a>
+        <div class="font-serif mt-5">
+          <h5>IOT BASED SMART IRRIGARTION SYSTEM</h5>
+          <h6>FOCUSED ON URBAN AGRICULTURE</h6>
+        </div>
+      </div>
+    <ul class="flex space-x-6 mr-6 text-2xl">
       @auth
       <li>
         <span class="font-bold uppercase">
