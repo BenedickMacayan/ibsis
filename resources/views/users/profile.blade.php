@@ -1,51 +1,56 @@
 <x-layout>
-    <x-card class="p-10 max-w-lg mx-auto mt-24 shadow-xl">
-      <header class="text-center">
-        <h2 class="text-2xl font-bold uppercase mb-6 text-green-900">PROFILE</h2>
-      </header>
+  <x-card class="p-10 mx-auto mt-24 shadow-xl w-6/12 text-2xl">
+    <header class="text-center">
+      <h1 class="text-3xl font-bold uppercase mb-6 text-green-900">PROFILE</h2>
+    </header>
 
-        @csrf
-        <div class="mb-6">
+      @csrf
 
-          <h3 class="inline-block text-lg mb-2 text-green-700"> First Name </h3>
-          <span>
-            {{auth()->user()->first_name}}     
-          </span>
-          
-        </div>
+      <div class="flex justify-between">
 
-        <div class="mb-6">
+        <div class="mb-7 w-6/12">
 
-        <h3 class="inline-block text-lg mb-2 text-green-700"> Last Name </h3>
-          <span>
-            {{auth()->user()->last_name}}     
-          </span>
-
-        </div>
-  
-        <div class="mb-6">
-
-        <h3 class="inline-block text-lg mb-2 text-green-700"> Email Address </h3>
-          <span>
-            {{auth()->user()->email}}     
-          </span>
+          <h2 class="block text-lg mb-2 text-green-700 font-semibold"> First Name </h3>
+          <div class="p-2">
+            {{auth()->user()->first_name}}
+          </div>
 
         </div>
 
-        <div class="mb-6">
+        <div class="mb-7 w-6/12">
 
-        <h3 class="inline-block text-lg mb-2 text-green-700"> Phone Number </h3>
-          <span>
-            {{auth()->user()->phone_no}}     
-          </span>
+          <h2 class="block text-lg mb-2 text-green-700 font-semibold"> Last Name </h3>
+          <div class="p-2">
+            {{auth()->user()->last_name}}
+          </div>
 
         </div>
-        
-        <div class="mb-6">
-          <a href="/" class="text-blue-400 px-6 py-2 rounded-xl">
-              Edit Profile
-            </a>
+
+      </div>
+
+      <div class="mb-7">
+
+        <h2 class="block text-lg mb-2 text-green-700 font-semibold"> Email Address </h3>
+        <div class="p-2">
+          {{auth()->user()->email}}
         </div>
 
-    </x-card>
-  </x-layout>
+      </div>
+
+      <div class="mb-7">
+
+      <h3 class="block text-lg mb-2 text-green-700 font-semibold"> Phone Number </h3>
+      <div class="p-2">
+        {{auth()->user()->phone_no}}
+      </div>
+
+      </div>
+
+      <div class="mb-7">
+        <a href="/" class="bg-lime-600 text-white rounded py-2 px-4 hover:bg-green-600">
+          Edit Profile
+        </a>
+      </div>
+
+  </x-card>
+</x-layout>

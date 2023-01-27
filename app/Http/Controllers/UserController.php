@@ -48,7 +48,7 @@ class UserController extends Controller
     // Update User Data
     public function update(Request $request, User $user) {
         // Make sure logged in user is owner
-        if($user->user_id != auth()->id()) {
+        if($user->id != auth()->id()) {
             abort(403, 'Unauthorized Action');
         }
         

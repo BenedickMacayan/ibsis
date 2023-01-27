@@ -29,7 +29,7 @@
   <nav class="flex justify-between items-center mb-4 bg-white">
       <div class="flex justfy-between text-center">
         <a href="/"><figure class="pl-10 pt-5 pb-5"><img class="w-24" src="{{asset('images/logo.png')}}" alt="" class="logo" /></figure></a>
-        <div class="font-serif mt-5">
+        <div class="font-sans p-10 align-baseline font-bold text-green-900">
           <h5>IOT BASED SMART IRRIGARTION SYSTEM</h5>
           <h6>FOCUSED ON URBAN AGRICULTURE</h6>
         </div>
