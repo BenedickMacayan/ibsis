@@ -41,31 +41,25 @@ class UserController extends Controller
     }
 
     // Show Edit Form
-    public function edit($id) {
-        $users=User::find($id);
-        return view('users.edit',compact('users'));
+    public function edit(User $user) {
+        return view('users.edit', ['user' => $user]);
     }
 
     // Update User Data
-    public function update(Request $request, $id) {
+    public function update(Request $request, User $user) {
         // Make sure logged in user is owner
-        if($id != auth()->id()) {
+        if($user->user_id != auth()->id()) {
             abort(403, 'Unauthorized Action');
         }
         
-        $users=Users::find($id);
-        $users->first_name=$request->input("first_name");
-        $users->last_name=$request->input("last_name");
-        $users->phone_no=$request->input("phone_no");
-        // $formFields = $request->validate([
-        //     'first_name' => 'required',
-        //     'last_name' => ['required'],
-        //     'phone_no' => 'required',
-        //     'email' => ['required', 'email'],
-        // ]);
+        $formFields = $request->validate([
+            'first_name' => 'required',
+            'last_name' => ['required'],
+            'phone_no' => 'required',
+            'email' => ['required', 'email'],
+        ]);
 
-        // $user->update($formFields);
-        $users->update();
+        $user->update($formFields);
 
         return back()->with('message', 'User Profile updated successfully!');
     }
