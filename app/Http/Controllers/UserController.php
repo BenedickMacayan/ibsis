@@ -35,6 +35,11 @@ class UserController extends Controller
         return redirect('/')->with('message', 'User created and logged in');
     }
 
+    // Show Login Form
+    public function profile() {
+        return view('users.profile');
+    }
+
     // Logout User
     public function logout(Request $request) {
         auth()->logout();
