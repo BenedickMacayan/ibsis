@@ -38,7 +38,7 @@
       @auth
       <li>
         <span class="font-bold uppercase">
-          <a href="{{ route('profile', ['id' => Auth::id()]) }}" class="hover:text-laravel text-green-900">View Profile</a>
+          <a href="{{ route('profile') }}" class="hover:text-laravel text-green-900">View Profile</a>
         </span>
       </li>
       <li>

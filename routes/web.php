@@ -25,7 +25,7 @@ Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 Route::post('/users', [UserController::class, 'store']);
 
 // Show Profile
-Route::get('/users/{id}/profile', [UserController::class, 'profile'])->middleware('auth')->name('profile');
+Route::get('/users/profile', [UserController::class, 'profile'])->middleware('auth')->name('profile');
 
 // Log User Out
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
@@ -37,7 +37,7 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 // Show Edit Profile Form
-Route::get('/users/{id}/edit', [UserController::class, 'edit'])->middleware('auth')->name('edit');
+Route::get('/users/edit', [UserController::class, 'edit'])->middleware('auth')->name('edit');
 
 // Update Profile
-Route::put('/users/{user}', [UserController::class, 'update'])->middleware('auth');
+Route::put('/users/profile', [UserController::class, 'update'])->middleware('auth')->name('update');

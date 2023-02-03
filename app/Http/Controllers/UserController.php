@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -36,8 +37,8 @@ class UserController extends Controller
     }
 
     // Show Login Form
-    public function profile(User $user) {
-        return view('users.profile', ['user' => $user]);
+    public function profile() {
+        return view('users.profile');
     }
 
     // Show Edit Form
@@ -46,11 +47,13 @@ class UserController extends Controller
     }
 
     // Update User Data
-    public function update(Request $request, User $user) {
+    public function update(Request $request) {
+       
+
         // Make sure logged in user is owner
-        if($user->id != auth()->id()) {
-            abort(403, 'Unauthorized Action');
-        }
+        // if($user->id != auth()->id()) {
+        //     abort(403, 'Unauthorized Action');
+        // }
         
         $formFields = $request->validate([
             'first_name' => 'required',
@@ -59,9 +62,15 @@ class UserController extends Controller
             'email' => ['required', 'email'],
         ]);
 
-        $user->update($formFields);
+        $user = User::find(Auth::user()->id);
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->phone_no = $request->phone_no;
+        $user->email = $request->email;
 
-        return redirect('users.profile')->with('message', 'User Profile updated successfully!');
+        $user->update();
+
+        return redirect()->route('profile')->with('message', 'User Profile updated successfully!');
     }
 
     // Logout User
