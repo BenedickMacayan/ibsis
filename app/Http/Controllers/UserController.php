@@ -36,8 +36,8 @@ class UserController extends Controller
     }
 
     // Show Login Form
-    public function profile() {
-        return view('users.profile');
+    public function profile(User $user) {
+        return view('users.profile', ['user' => $user]);
     }
 
     // Show Edit Form
@@ -61,7 +61,7 @@ class UserController extends Controller
 
         $user->update($formFields);
 
-        return back()->with('message', 'User Profile updated successfully!');
+        return redirect('users.profile')->with('message', 'User Profile updated successfully!');
     }
 
     // Logout User

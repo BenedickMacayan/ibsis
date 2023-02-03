@@ -25,7 +25,7 @@ Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 Route::post('/users', [UserController::class, 'store']);
 
 // Show Profile
-Route::get('/profile', [UserController::class, 'profile'])->middleware('auth');
+Route::get('/users/{id}/profile', [UserController::class, 'profile'])->middleware('auth')->name('profile');
 
 // Log User Out
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');

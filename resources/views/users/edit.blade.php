@@ -4,7 +4,8 @@
       <h1 class="text-3xl font-bold uppercase mb-6 text-green-900">PROFILE</h2>
     </header>
 
-    <form method="POST" action="/users/{{$user->id}}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('profile', ['id' => Auth::id()]) }}" enctype="multipart/form-data">
+  
       @csrf
 
       @method('PUT')

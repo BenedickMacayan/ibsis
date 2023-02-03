@@ -25,7 +25,7 @@
   <title>IBSIS</title>
 </head>
 
-<body class="mb-48 bg-cover bg-no-repeat" style="background-image: url(images/background.png)">
+<body class="mb-48 bg-cover bg-no-repeat" style="background-image: url({{asset('images/background.png')}})">
   <nav class="flex justify-between items-center mb-4 bg-white">
       <div class="flex justfy-between text-center">
         <a href="/"><figure class="pl-10 pt-5 pb-5"><img class="w-24" src="{{asset('images/logo.png')}}" alt="" class="logo" /></figure></a>
@@ -38,7 +38,7 @@
       @auth
       <li>
         <span class="font-bold uppercase">
-          <a href="{{ url('/profile') }}" class="hover:text-laravel text-green-900">View Profile</a>
+          <a href="{{ route('profile', ['id' => Auth::id()]) }}" class="hover:text-laravel text-green-900">View Profile</a>
         </span>
       </li>
       <li>
