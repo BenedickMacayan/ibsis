@@ -47,7 +47,7 @@
       </div>
 
       <div class="mb-7">
-        <a href="/" class="bg-lime-600 text-white rounded py-2 px-4 hover:bg-green-600">
+        <a href="{{ route('edit', ['id' => Auth::id()]) }}" class="bg-lime-600 text-white rounded py-2 px-4 hover:bg-green-600">
           Edit Profile
         </a>
       </div>
