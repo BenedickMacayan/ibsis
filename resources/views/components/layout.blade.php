@@ -38,23 +38,23 @@
       @auth
       <li>
         <span class="font uppercase">
-          <a href="{{ route('profile') }}" class="hover:text-laravel text-green-900">View Profile</a>
+          <a href="{{ route('profile') }}" class="hover:text-laravel text-green-900"><i class="fa fa-user"></i>View Profile</a>
         </span>
       </li>
       <li>
         <form class="inline" method="POST" action="/logout">
           @csrf
-          <button type="submit">
-            <i class="fa-solid fa-door-closed text-green-900"></i> <span class="hover:text-laravel text-green-900">LOG OUT</span>
+          <button type="submit" class="hover:text-laravel text-green-900">
+            <i class="fa-solid fa-door-closed"></i> <span>LOG OUT</span>
           </button>
         </form>
       </li>
       @else
       <li>
-        <a href="/register" class="hover:text-laravel text-green-900"><i class="fa-solid fa-user-plus text-green-900"></i> REGISTER</a>
+        <a href="/register" class="hover:text-laravel text-green-900"><i class="fa-solid fa-user-plus"></i> REGISTER</a>
       </li>
       <li>
-        <a href="/login" class="hover:text-laravel text-green-900"><i class="fa-solid fa-arrow-right-to-bracket text-green-900"></i> LOGIN</a>
+        <a href="/login" class="hover:text-laravel text-green-900"><i class="fa-solid fa-arrow-right-to-bracket"></i> LOGIN</a>
       </li>
       @endauth
     </ul>

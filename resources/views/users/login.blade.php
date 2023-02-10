@@ -37,7 +37,7 @@
         <div class="mt-8">
           <p class="text-green-700">
             Don't have an account?
-            <a href="/register" class="text-laravel">Register</a>
+            <a href="/register" class="text-laravel hover:underline">Register</a>
           </p>
         </div>
       </form>
