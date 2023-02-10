@@ -75,7 +75,7 @@
         <div class="mt-8">
           <p class="text-green-700">
             Already have an account?
-            <a href="/login" class="text-laravel">Login</a>
+            <a href="/login" class="text-laravel hover:underline">Login</a>
           </p>
         </div>
       </form>
