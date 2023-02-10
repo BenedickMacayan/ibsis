@@ -37,7 +37,7 @@
     <ul class="flex space-x-6 mr-6 text-2xl">
       @auth
       <li>
-        <span class="font-bold uppercase">
+        <span class="font uppercase">
           <a href="{{ route('profile') }}" class="hover:text-laravel text-green-900">View Profile</a>
         </span>
       </li>

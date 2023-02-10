@@ -15,7 +15,7 @@
                 <div class="mb-7 w-6/12">
         
                   <label for="first_name" class="block text-lg mb-2 text-green-700 font-semibold">First Name</label>
-                  <input type="text" class="border border-gray-200 rounded p-2 w-full" name="first_name"
+                  <input type="text" class="border border-gray-200 rounded p-2 w-11/12" name="first_name"
                    value="{{auth()->user()->first_name}}" />
           
                   @error('first_name')
@@ -63,7 +63,7 @@
               </div>
         
               <div class="mb-7">
-              <button type="submit" class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
+              <button type="submit" class="bg-laravel text-white rounded py-2 px-4 hover:bg-green-600">
                         Update Profile
                     </button>
                   <a href="/" class="text-black ml-4"> Back </a>
